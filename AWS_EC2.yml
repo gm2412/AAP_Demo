@@ -11,8 +11,8 @@
   tasks:
   - name: create ec2 instance in AWS account
     amazon.aws.ec2_instance:
-      instance_type: t3.small
-      image_id: ami-0dda7e535b65b6469
+      instance_type: "{{ ec2_instance_type }}"
+      image_id: "{{ image_id_number }}"
       count: 1
       region: "{{ aws_region }}"
       aws_access_key: "{{ aws_access_key }}"
@@ -20,7 +20,7 @@
       network:
         assign_public_ip: true
         security_group: default
-        vpc_subnet_id: subnet-22aba37b
+        vpc_subnet_id: "{{ vpc_subnet_id }}"
       state: present
       tags:
         app_type: web-server

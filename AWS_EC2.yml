@@ -11,6 +11,7 @@
   tasks:
   - name: create ec2 instance in AWS account
     amazon.aws.ec2_instance:
+      name: "{{ ec2_server_name }}"
       instance_type: "{{ ec2_instance_type }}"
       image_id: "{{ image_id_number }}"
       count: 1

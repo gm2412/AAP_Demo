@@ -5,8 +5,8 @@
 - hosts: localhost
   connection: local
   
-  vars:
-  - AWS.yml
+  vars_files:
+  - 'AWS.yml'
   
   tasks:
   - name: create ec2 instance in AWS account

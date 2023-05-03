@@ -4,5 +4,5 @@ aws_region: "us-west-2"
 hostnames:
   - ip-address
   - dns-name
-  - tag:Name
+  - tag:name
   - private-ip-address

@@ -9,6 +9,18 @@
   - 'AWS.yml'
   
   tasks:
+  - name: Security group creation
+    amazon.aws.ec2_security_group:
+      name: "{{ ec2_server_name }}-sg"
+      description: sg with inbound rules
+      region: "{{ aws_region }}"
+      rules:
+        - proto: tcp
+          ports:
+          - 80
+          cidr_ip: 0.0.0.0/0
+          rule_desc: allow all on port 80
+      
   - name: create ec2 instance in AWS account
     amazon.aws.ec2_instance:
       name: "{{ ec2_server_name }}"
@@ -19,7 +31,7 @@
       region: "{{ aws_region }}"
       network:
         assign_public_ip: true
-        security_group: default
+        security_group: "{{ ec2_server_name }}-sg"
         vpc_subnet_id: "{{ vpc_subnet_id }}"
       state: present
       tags:

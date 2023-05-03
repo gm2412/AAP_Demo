@@ -1,5 +1,5 @@
 ---
-#
+# EC2 Provisioning Playbook
 #
 #
 - hosts: localhost

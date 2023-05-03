@@ -1,3 +1,8 @@
 ---
 plugin: amazon.aws.aws_ec2
 aws_region: "us-west-2"
+hostnames:
+  - ip-address
+  - dns-name
+  - tag:Name
+  - private-ip-address

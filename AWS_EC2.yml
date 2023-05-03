@@ -36,6 +36,7 @@
       state: present
       tags:
         app_type: web-server
+        name: "{{ ec2_server_name }}"
         
 
         

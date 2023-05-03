@@ -14,6 +14,7 @@
       name: "{{ ec2_server_name }}"
       instance_type: "{{ ec2_instance_type }}"
       image_id: "{{ image_id_number }}"
+      key_name: "aap"
       count: 1
       region: "{{ aws_region }}"
       network:
